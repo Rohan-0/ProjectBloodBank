@@ -6,6 +6,8 @@ const bloodCamp = require('./db').bloodCamp
 const bodyParser = require('body-parser');
 const hospital = require('./db').hospital
 const { Op } = require("sequelize");
+var PORT = process.env.PORT || 5000;
+
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
@@ -132,6 +134,6 @@ app.post("/getBloodCamp",async(req,res)=>{
   })
   res.send(result)
 })
-app.listen(5000, function(){
+app.listen(PORT, function(){
     console.log('Server is listening on 5000');
 })
