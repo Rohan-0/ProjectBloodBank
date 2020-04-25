@@ -55,7 +55,7 @@ $(document).ready(function(){
 
             function getDist(zipH,zipB,BloodBankName,BloodBankId){
                 $.ajax({
-                    url:`https://www.zipcodeapi.com/rest/HtCqfRiusxpErSXWvn5NIAo3VGXTO5mpbeemzzHFZn6my2CU42LJb5ZZmQKLF61W/distance.json/${zipH}/${zipB}/<units>`,
+                    url:`https://cors-anywhere.herokuapp.com/http://www.zipcodeapi.com/rest/HtCqfRiusxpErSXWvn5NIAo3VGXTO5mpbeemzzHFZn6my2CU42LJb5ZZmQKLF61W/distance.json/${zipH}/${zipB}/<units>`,
                     success:function(result){
                         count++;
                         distBloodBank.push({

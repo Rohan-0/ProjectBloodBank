@@ -17,10 +17,7 @@ $(document).ready(function(){
         var table = document.createElement('table');
         table.setAttribute('class','table table-bordered');
         var divTable = document.getElementById('bbtable');
-        var h = document.createElement('h2');
-        let heading = document.createTextNode("CSV File Data");
-        h.appendChild(heading);
-        divTable.appendChild(h);
+        divTable.style.display = "block";
         var arr = ['Donor_id','BloodCampId','Gender','BloodGrp','Age','MonthsLastDon','TotDon','VolDon'
             ,'MonthsFirstDon','BloodDonNxt'];
         var thead = document.createElement('thead');
@@ -60,7 +57,7 @@ $(document).ready(function(){
 
         function callApiForPred(col1,col2,col3,col4,i){
             $.ajax({
-                url: `https://mighty-tundra-22355.herokuapp.com/predict_api`,
+                url: `https://cors-anywhere.herokuapp.com/https://mighty-tundra-22355.herokuapp.com/predict_api`,
                 method :'POST',
                 data:{col1:col1,col2:col2,col3:col3,col4:col4},
                 success: function(result){
