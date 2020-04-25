@@ -1,0 +1,165 @@
+body {
+	background-image: url(../images/bg4.jpg);
+   	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Tisa';
+}
+
+p {
+	font-size: 1.15rem;
+	font-weight: 500;
+}
+
+/*Home page*/
+#home .jumbotron {
+	background-image: url(../images/about.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	font-size: 1.5rem;
+	opacity: 0.95;
+	margin: 2rem 1rem;
+}
+
+#home .jumbotron h1 {
+	font-size: 3.5rem;
+	font-weight: 500;
+}
+
+#home .row {
+	margin: auto 5rem;
+}
+
+@media all and (max-width: 500px){
+	#home .row {
+		margin: auto 1rem;
+	}
+}
+
+@media all and (min-width: 600px) and (max-width: 767px){
+	#home .row {
+		margin: auto 8rem;
+	}
+}
+
+#home .row .card {
+	margin: auto 1.25rem;
+}
+
+.about {
+	padding: auto 5rem;
+}
+
+.text-monospace {
+	font-size: 1.5rem;
+}
+
+
+/*Table display*/
+#ForTable .table, #bbtable .table {
+	width: 80%;
+	margin: 1rem auto;
+	color: black;
+	font-weight: 500;
+}
+
+#ForTable .table-bordered td,#ForTable .table-bordered th, #bbtable .table-bordered td,#bbtable .table-bordered th {
+    border: 1px solid black;
+}
+
+#ForTable .table-bordered th, #bbtable .table-bordered th {
+	border-bottom: 2px solid black;
+}
+
+
+/*Navbar*/
+#navbarchange .navbar-nav .nav-link {
+	color: rgba(255,255,255,1);
+	font-size: 1.35rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+#navbarchange .navbar-brand {
+	font-size : 1.75rem;
+	font-weight: 500;
+	margin-right: 3rem;
+	margin-left: 1rem;
+}
+
+.navbar {
+    margin: 1rem 1rem;
+}
+
+#navbarchange .navbar-nav a:hover{
+	font-weight: 500;
+	color: #dadada;
+}
+
+i {
+	color: #9b0000;
+}
+
+@media all and (min-width: 990px) and (max-width: 1125px){
+	#navbarchange .navbar-nav .nav-link {
+		font-size: 1.25rem;
+		padding-right: .5rem;
+		padding-left: .5rem;
+	}
+}
+
+
+/*Form Display*/
+#formstyling {
+	width: 65%;
+	margin:2rem auto ;
+}
+
+@media all and (min-width: 1281px){
+	#formstyling {
+		width: 40%;
+		margin:2rem auto ;
+	}
+}
+
+@media all and (min-width: 761px) and (max-width: 1280px){
+	#formstyling {
+		width: 50%;
+		margin:2rem auto ;
+	}
+}
+
+@media all and (min-width: 650px) and (max-width: 760px){
+	#formstyling {
+		width: 55%;
+		margin:2rem auto ;
+	}
+}
+
+#padRigProb {
+	padding-right: 0;
+}
+
+label {
+	font-weight: 500;
+}
+
+/*Graphs Display*/
+#displayGraphs {
+	width: 100%;
+}
+
+@media all and (min-width: 600px){
+	#displayGraphs {
+		width: 90%;
+	}
+}
