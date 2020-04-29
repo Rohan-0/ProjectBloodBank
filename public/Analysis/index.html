@@ -31,8 +31,8 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/AddCamp/index.html">Add Blood Bank</a>
-                <a class="dropdown-item" href="#">Add Donor Database</a>
-                <a class="dropdown-item" href="#">Analysis</a>
+                <a class="dropdown-item" href="/AddDonor/index.html">Add Donor Database</a>
+                <a class="dropdown-item" href="/AnalysisBank/index.html">Analysis</a>
                 <a class="dropdown-item" href="#">Prediction</a>
               </div>
             </li>
@@ -63,9 +63,9 @@
                 </div>
             </div>
             <div class="form-group row text-left">
-                <label for="name" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Name : </label>
+                <label for="name" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Password : </label>
                 <div class="col-sm-8 col-md-9 col-lg-10">
-                    <input type="text" class="form-control" id="name">
+                    <input type="password" class="form-control" id="password">
                 </div>
             </div>
             <div class="text-center">
@@ -90,6 +90,21 @@
                     <div class="form-group col-6 col-sm-5 col-md-4">
                         <label for="BloodBank">Blood Bank</label>
                         <select id="BloodBank" class="form-control"></select>
+                        <select id="month">
+                            <option value="Any" selected>Any</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
                     </div>
                     <div style="display: none;" class="form-group col-6 col-md-5">
                         <label for="Predict">Include Future Prediction</label>

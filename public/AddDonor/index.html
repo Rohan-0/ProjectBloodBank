@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark rounded-lg" id="navbarchange">
+        <a class="navbar-brand" href="#">RedFL<i class="fas fa-tint"></i>W</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blood Bank
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/AddCamp/index.html">Add Blood Bank</a>
+                <a class="dropdown-item" href="/AddDonor/index.html">Add Donor Database</a>
+                <a class="dropdown-item" href="/AnalysisBank/index.html">Analysis</a>
+                <a class="dropdown-item" href="#">Prediction</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hospitals
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/AddHospital/index.html">Add Hospital</a>
+                <a class="dropdown-item" href="/Analysis/index.html">Analysis</a>
+                <a class="dropdown-item" href="/Analysis/predictionIndex.html">Prediction</a>
+                <a class="dropdown-item" href="/Query/index.html">Query</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+
+    <div class="text-center " id="formstyling">
+        <h1>Add Blood Bank</h1>
+        <p>Register your blood-bank and upload your donors' database without any breach of personal information so that the nearby hospitals can approach you for blood supplies as per the requirement.</p>
+        <br>
+        <form>
+            <div class="form-group row text-left">
+                <label for="ID" class="col-sm-4 col-md-3 col-form-label">ID : </label>
+                <div class="col-sm-8 col-md-9">
+                    <input type="text" class="form-control" id="ID">
+                </div>
+            </div>
+            <div class="form-group row text-left">
+                <label for="Password" class="col-sm-4 col-md-3 col-form-label">Password : </label>
+                <div class="col-sm-8 col-md-9">
+                    <input type="password" class="form-control" id="password">
+                </div>
+            </div>
+            <!-- <div class="form-group row text-left">
+                <label for="files" class="col-sm-4 col-md-3 col-form-label" id="padRigProb">Choose CSV file : </label>
+                <div class="col-sm-8 col-md-9">
+                    <input type="file" id="files">
+                </div>
+            </div> -->
+            <select id="month">
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+            <input type="file" id='files'>
+                       
+        </form>
+        <input type="submit" class="btn btn-primary" id="btnSubmit"> 
+    </div>
+
+
+    <div class="container-fluid text-center">
+        <div class="table-responsive table-sm">
+            <div id="bbtable" style="display: none;">
+                <h2>CSV File Data</h2>
+            </div>          
+        </div>      
+    </div>
+
+</body>
+</html>

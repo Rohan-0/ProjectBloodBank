@@ -4,19 +4,19 @@ $(document).ready(function(){
     let resultsIDName = []
     let predVal = document.getElementById("Predict")
     let BloodBankVal = document.getElementById("BloodBank")
-    
+    let month = document.getElementById('month')
     btn.onclick = function(){
         let x = document.getElementById("closebb");
         x.style.display = "block";
         let hID = document.getElementById("hospitalId")
-        let name = document.getElementById("name")
-        getResults(hID.value,name.value)
+        let password = document.getElementById("password")
+        getResults(hID.value,password.value)
                 
-        function getResults(hID,name){
+        function getResults(hID,password){
             $.ajax({
                 url:`/getResult`,
                 method:'POST',
-                data:{hospitalId:hID,Name:name},
+                data:{hospitalId:hID,password:password},
                 success:function(result){
                     console.log(result)
                     console.log(result[0].zipCode)
@@ -24,7 +24,7 @@ $(document).ready(function(){
                 },
                 error: function(e) {
                     console.log(e);
-                    alert("Either the id or the name is wrong")
+                    alert("Either the id or the password is wrong")
                 }
             })
         }
@@ -38,97 +38,25 @@ $(document).ready(function(){
                     resultRecieved = true
                     // Api Call to zip distance 
                     console.log(result)
-                    closestBloodBanks(result,zC)
+                    for(let i=0;i<result.length;i++){
+                        resultsIDName.push({
+                            id:result[i].BloodCampId,
+                            name:result[i].Name
+                        })
+                    }
+                    let listBank = document.getElementById('listBank')
+                    for(let i=0;i<resultsIDName.length;i++){
+                        let li = document.createElement('li')
+                        let text = document.createTextNode(resultsIDName[i].name)
+                        li.appendChild(text)
+                        listBank.appendChild(li)
+                    }
+                    appendBloodBanks();
                 },
                 error:function(e){
                     console.log(e)
                 }
             })
-        }
-
-        function closestBloodBanks(bloodBanks,zipCodeHospital){
-            let distBloodBank = []
-            let count = 0
-            for(let i=0;i<bloodBanks.length;i++){
-                getDist(zipCodeHospital,bloodBanks[i].zipCode,bloodBanks[i].Name,bloodBanks[i].BloodCampId)
-            }
-
-            function getDist(zipH,zipB,BloodBankName,BloodBankId){
-                $.ajax({
-                    url:`https://cors-anywhere.herokuapp.com/http://www.zipcodeapi.com/rest/HtCqfRiusxpErSXWvn5NIAo3VGXTO5mpbeemzzHFZn6my2CU42LJb5ZZmQKLF61W/distance.json/${zipH}/${zipB}/<units>`,
-                    success:function(result){
-                        count++;
-                        distBloodBank.push({
-                            distance: result.distance,
-                            BankName: BloodBankName,
-                            BankId : BloodBankId
-                        })
-                        if(count == bloodBanks.length)
-                            getTop3Bloodbanks();
-                    }
-                })
-            }
-
-            function getTop3Bloodbanks(){
-                let id1=-1 ,id2=-1, id3=-1, dist1=Number.MAX_SAFE_INTEGER, dist2=Number.MAX_SAFE_INTEGER, dist3=Number.MAX_SAFE_INTEGER;
-                let name1,name2,name3;
-                if(distBloodBank.length<=3){
-                    for(let i=0;i<distBloodBank.length;i++){
-                        resultsIDName.push({
-                            id:distBloodBank[i].BankId,
-                            name:distBloodBank[i].BankName
-                        })
-                    }
-                }
-                else{
-                    for(let i=0;i<distBloodBank.length;i++){
-                        if(dist1>distBloodBank[i].distance){
-                            dist3 = dist2
-                            id3=id2
-                            name3=name2
-                            dist2 = dist1
-                            id2 = id1
-                            name2=name1
-                            dist1 = distBloodBank[i].distance
-                            id1 = distBloodBank[i].BankId
-                            name1 = distBloodBank[i].BankName
-                        }
-                        else if(dist2>distBloodBank[i].distance){
-                            dist3 = dist2
-                            id3 = id2
-                            name3 = name2
-                            dist2 = distBloodBank[i].distance
-                            id2 = distBloodBank[i].BankId
-                            name2 = distBloodBank[i].BankName
-                        }
-                        else if(dist3>distBloodBank[i].distance){
-                            name3 = distBloodBank[i].BankName
-                            dist3 = distBloodBank[i].distance
-                            id3 = distBloodBank[i].BankId
-                        }
-                    }
-                    resultsIDName.push({
-                        id:id1,
-                        name:name1
-                    })
-                    resultsIDName.push({
-                        id:id2,
-                        name:name2
-                    })
-                    resultsIDName.push({
-                        id:id3,
-                        name:name3
-                    })
-                }
-                let listBank = document.getElementById('listBank')
-                for(let i=0;i<resultsIDName.length;i++){
-                    let li = document.createElement('li')
-                    let text = document.createTextNode(resultsIDName[i].name)
-                    li.appendChild(text)
-                    listBank.appendChild(li)
-                }
-                appendBloodBanks();
-            }
         }
     }
 
@@ -167,7 +95,7 @@ $(document).ready(function(){
                 $.ajax({
                     url:'/countDonors',
                     method:"POST",
-                    data:{BloodCampId:resultsIDName[i].id, age:AgeGrp[j],gender:"Any",bloodGrp:"Any",BloodDonNxt:predVal.value},
+                    data:{BloodCampId:resultsIDName[i].id,month:month.value, age:AgeGrp[j],gender:"Any",bloodGrp:"Any",BloodDonNxt:predVal.value},
                     success:function(result){
                         if(BloodBankVal.value==resultsIDName[i].name || BloodBankVal.value=="Any")
                             AgeCount[j] += parseInt(result)
@@ -235,7 +163,7 @@ $(document).ready(function(){
                 $.ajax({
                     url:'/countDonors',
                     method:"POST",
-                    data:{BloodCampId:resultsIDName[i].id, age:"Any",gender:GenderGrp[j],bloodGrp:"Any",BloodDonNxt:predVal.value},
+                    data:{BloodCampId:resultsIDName[i].id, month:month.value,age:"Any",gender:GenderGrp[j],bloodGrp:"Any",BloodDonNxt:predVal.value},
                     success:function(result){
                         if(BloodBankVal.value==resultsIDName[i].name || BloodBankVal.value=="Any")
                             GenderCount[j] += parseInt(result)
@@ -294,7 +222,7 @@ $(document).ready(function(){
                 $.ajax({
                     url:'/countDonors',
                     method:"POST",
-                    data:{BloodCampId:resultsIDName[i].id, age:"Any",gender:"Any",bloodGrp:BgGrp[i],BloodDonNxt:predVal.value},
+                    data:{BloodCampId:resultsIDName[i].id, month:month.value,age:"Any",gender:"Any",bloodGrp:BgGrp[i],BloodDonNxt:predVal.value},
                     success:function(result){
                         if(BloodBankVal.value==resultsIDName[i].name || BloodBankVal.value=="Any")
                             BgCount[j] += parseInt(result)
