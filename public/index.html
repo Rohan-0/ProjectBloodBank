@@ -13,7 +13,7 @@
 <body>
 
   <div id="home">
-    <nav class="navbar navbar-expand-lg navbar-dark rounded-lg" id="navbarchange" style="background-color: #3f51b5;">
+    <nav class="navbar navbar-expand-lg navbar-dark rounded-lg" id="navbarchange">
         <a class="navbar-brand" href="#">RedFL<i class="fas fa-tint"></i>W</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,20 +24,27 @@
             <li class="nav-item active">
               <a class="nav-link" href="/">Home</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/AddCamp/index.html'>Add blood bank</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blood Bank
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/AddCamp/index.html">Add Blood Bank</a>
+                <a class="dropdown-item" href="#">Add Donor Database</a>
+                <a class="dropdown-item" href="#">Analysis</a>
+                <a class="dropdown-item" href="#">Prediction</a>
+              </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/AddHospital/index.html'>Add hospital</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/Display/index.html'>Display blood bank</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/Query/index.html'>Query</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/Analysis/index.html'>Analysis</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hospitals
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/AddHospital/index.html">Add Hospital</a>
+                <a class="dropdown-item" href="/Analysis/index.html">Analysis</a>
+                <a class="dropdown-item" href="/Analysis/predictionIndex.html">Prediction</a>
+                <a class="dropdown-item" href="/Query/index.html">Query</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -57,8 +64,8 @@
           <div class="card">
             <img src="../images/1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h4 class="card-title text-center">Saving lives</h4>
-              <p class="card-text">Taking an hour out of your busy schedule to donate at our upcoming blood drive can protect our community’s blood supply and help save the life of someone in our community.</p>
+              <!-- <h4 class="card-title text-center">Saving lives</h4> -->
+              <p class="card-text">Increase the effectiveness and efficiency of blood donations.</p>
             </div>
           </div> 
           <br>     
@@ -67,8 +74,8 @@
           <div class="card">
             <img src="../images/2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h4 class="card-title text-center">Spreading Smiles</h4>
-              <p class="card-text">Happy people donate more, and the more people donate, the happier they are. ... Besides the happiness from giving, regular voluntary blood donors know that they are very healthy, this is because they have passed all the stringent blood tests that qualify their blood as healthy and fit for transfusion.</p>
+              <!-- <h4 class="card-title text-center">Spreading Smiles</h4> -->
+              <p class="card-text">Analyse patterns in blood donations and make important predictions about future blood donations.</p>
             </div>
           </div> 
           <br>     
@@ -77,8 +84,8 @@
           <div class="card">
             <img src="../images/3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h4 class="card-title text-center">Enriching Mankind</h4>
-              <p class="card-text">Donating blood is a vital way to help save lives. Along with helping save lives, there are a number of reasons why donating blood is important. A single donation can save three lives. One blood donation provides different blood components that can help up to three different people.</p>
+              <!-- <h4 class="card-title text-center">Enriching Mankind</h4> -->
+              <p class="card-text">Connect blood banks with hospitals.</p>
             </div>
           </div>
           <br>      

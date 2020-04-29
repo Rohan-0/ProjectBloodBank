@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark rounded-lg" id="navbarchange" style="background-color: #3f51b5;">
+    <nav class="navbar navbar-expand-lg navbar-dark rounded-lg" id="navbarchange">
         <a class="navbar-brand" href="#">RedFL<i class="fas fa-tint"></i>W</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,20 +24,27 @@
             <li class="nav-item active">
               <a class="nav-link" href="/">Home</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/AddCamp/index.html'>Add blood bank</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blood Bank
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/AddCamp/index.html">Add Blood Bank</a>
+                <a class="dropdown-item" href="#">Add Donor Database</a>
+                <a class="dropdown-item" href="#">Analysis</a>
+                <a class="dropdown-item" href="#">Prediction</a>
+              </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/AddHospital/index.html'>Add hospital</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/Display/index.html'>Display blood bank</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/Query/index.html'>Query</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href='/Analysis/index.html'>Analysis</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hospitals
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/AddHospital/index.html">Add Hospital</a>
+                <a class="dropdown-item" href="/Analysis/index.html">Analysis</a>
+                <a class="dropdown-item" href="/Analysis/predictionIndex.html">Prediction</a>
+                <a class="dropdown-item" href="/Query/index.html">Query</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -50,32 +57,38 @@
         <br>
         <form>
             <div class="form-group row text-left">
-                <label for="ID" class="col-sm-4 col-md-3 col-lg-2 col-form-label">ID : </label>
-                <div class="col-sm-8 col-md-9 col-lg-10">
+                <label for="ID" class="col-sm-4 col-md-3 col-form-label">ID : </label>
+                <div class="col-sm-8 col-md-9">
                     <input type="text" class="form-control" id="ID">
                 </div>
             </div>
             <div class="form-group row text-left">
-                <label for="Name" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Name : </label>
-                <div class="col-sm-8 col-md-9 col-lg-10">
+                <label for="Password" class="col-sm-4 col-md-3 col-form-label">Password : </label>
+                <div class="col-sm-8 col-md-9">
+                    <input type="password" class="form-control" id="assword">
+                </div>
+            </div>
+            <div class="form-group row text-left">
+                <label for="Name" class="col-sm-4 col-md-3 col-form-label">Name : </label>
+                <div class="col-sm-8 col-md-9">
                     <input type="text" class="form-control" id="Name">
                 </div>
             </div>
             <div class="form-group row text-left">
-                <label for="Area" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Area : </label>
-                <div class="col-sm-8 col-md-9 col-lg-10">
+                <label for="Area" class="col-sm-4 col-md-3 col-form-label">Area : </label>
+                <div class="col-sm-8 col-md-9">
                     <input type="text" class="form-control" id="Area">
                 </div>
             </div>
             <div class="form-group row text-left">
-                <label for="zipCode" class="col-sm-4 col-md-3 col-lg-2 col-form-label">Zip : </label>
-                <div class="col-sm-8 col-md-9 col-lg-10">
+                <label for="zipCode" class="col-sm-4 col-md-3 col-form-label">Zip : </label>
+                <div class="col-sm-8 col-md-9">
                     <input type="text" class="form-control" id="zipCode">
                 </div>
             </div>
             <div class="form-group row text-left">
-                <label for="contact" class="col-sm-4 col-md-3 col-lg-2 col-form-label" id="padRigProb">Contact : </label>
-                <div class="col-sm-8 col-md-9 col-lg-10">
+                <label for="contact" class="col-sm-4 col-md-3 col-form-label" id="padRigProb">Contact : </label>
+                <div class="col-sm-8 col-md-9">
                     <input type="text" class="form-control" id="contact">
                 </div>
             </div>

@@ -82,11 +82,27 @@ p {
 
 
 /*Navbar*/
+#navbarchange {
+	background-color: #3f51b5;
+	margin: 1rem 1rem;
+}
+
+#navbarchange .dropdown-menu {
+	background-color: #3f51b5;
+	border: none;
+}
+
 #navbarchange .navbar-nav .nav-link {
 	color: rgba(255,255,255,1);
 	font-size: 1.35rem;
-	padding-right: 1rem;
-	padding-left: 1rem;
+	padding-right: 1.25rem;
+	padding-left: 1.5rem;
+}
+
+#navbarchange .navbar-nav .dropdown-item {
+	color: rgba(255,255,255,1);
+	font-size: 1.25rem;
+	padding-left: 2rem;
 }
 
 #navbarchange .navbar-brand {
@@ -96,26 +112,23 @@ p {
 	margin-left: 1rem;
 }
 
-.navbar {
-    margin: 1rem 1rem;
-}
-
 #navbarchange .navbar-nav a:hover{
-	font-weight: 500;
-	color: #dadada;
+	font-weight: 600;
+	background-color: #3f51b5;
 }
 
+/*icon color*/
 i {
 	color: #9b0000;
 }
 
-@media all and (min-width: 990px) and (max-width: 1125px){
+/*@media all and (min-width: 990px) and (max-width: 1125px){
 	#navbarchange .navbar-nav .nav-link {
 		font-size: 1.25rem;
 		padding-right: .5rem;
 		padding-left: .5rem;
 	}
-}
+}*/
 
 
 /*Form Display*/
