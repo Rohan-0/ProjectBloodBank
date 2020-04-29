@@ -25,15 +25,40 @@ app.post('/insertRowDonor',async (req,res)=>{
     TotDon: req.body.TotDon,
     VolDon: req.body.VolDon,
     MonthsFirstDon: req.body.MonthsFirstDon,
-    BloodDonNxt: req.body.BloodDonNxt
+    BloodDonNxt: req.body.BloodDonNxt,
+    Month:req.body.Month
   })
   res.sendStatus(200)
 
+})
+app.post('/CheckRowCamp',async(req,res)=>{
+  let result = await bloodCamp.findAll({
+    where:{
+      [Op.and]:{
+        BloodCampId:req.body.BloodCampId,
+        password:req.body.password
+      }
+    }
+  })
+  console.log(result)
+  if(result == 0)
+    res.sendStatus(400)
+  res.sendStatus(200)
+})
+app.post('/fetchMonths',async(req,res)=>{
+  let result = await bloodDonor.findAll({
+    attributes:[Sequelize.fn('DISTINCT', Sequelize.col('Month')) ,'Month'],
+    where:{
+      BloodCampId: req.body.id
+    }
+  })
+  res.send(result)
 })
 app.post('/insertRowCamp',async(req,res)=>{
     await bloodCamp.create({
         BloodCampId: req.body.BloodCampId,
         Name:req.body.Name,
+        password:req.body.password,
         Area: req.body.Area,
         zipCode :req.body.zipCode
       })
@@ -45,7 +70,8 @@ app.post('/insertRow',async(req,res)=>{
         Name:req.body.Name,
         Area: req.body.Area,
         Contact: req.body.Contact,
-        zipCode: req.body.zipCode
+        zipCode: req.body.zipCode,
+        password: req.body.password
       })
     res.sendStatus(200)
 })
@@ -68,7 +94,7 @@ app.post('/getResult',async (req,res)=>{
     where:{
       [Op.and]:{
         hospitalId:req.body.hospitalId,
-        Name:req.body.Name
+        password:req.body.password
       }
     }
     })
@@ -78,7 +104,7 @@ app.post('/getResult',async (req,res)=>{
      res.send(result)
 })
 app.post('/countDonors',async(req,res)=>{
-  let gender, minAge, maxAge, bloodGrp,pred=true;
+  let gender, minAge, maxAge, bloodGrp,pred=true,month=['January','February','March','May','April','June','July','August','September','October','November','December'];
   if(req.body.gender=="Any"){
     gender=["M","F"]
   }
@@ -99,7 +125,10 @@ app.post('/countDonors',async(req,res)=>{
   else{
     bloodGrp = req.body.bloodGrp
   }
-
+  if(req.body.month){
+    if(req.body.month != "Any")
+      month = req.body.month;
+  }
   if(req.body.BloodDonNxt){
     if(req.body.BloodDonNxt == "No")
       pred = [true,false]
@@ -115,8 +144,8 @@ app.post('/countDonors',async(req,res)=>{
           }
         },
         {Gender:gender},
-        {BloodGrp:bloodGrp}
-
+        {BloodGrp:bloodGrp},
+        {Month:month}
       ]
     }
   });

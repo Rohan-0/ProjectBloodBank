@@ -24,7 +24,10 @@ const hospital = dbHospital.define('hospital',{
         type:DT.STRING,
         allowNull:false,
     },
-    
+    password:{
+        type:DT.STRING,
+        allowNull:false
+    },
     Area:{
         type:DT.STRING,
         allowNull:false
@@ -49,7 +52,10 @@ const bloodCamp = dbBloodCamp.define('bloodCamp',{
         type:DT.STRING,
         allowNull:false,
     },
-    
+    password:{
+        type:DT.STRING,
+        allowNull:false
+    },
     Area:{
         type:DT.STRING,
         allowNull:false
@@ -70,6 +76,10 @@ const bloodDonor = db.define('bloodDonor',{
         allowNull:false,
     },
     BloodGrp:{
+        type:DT.STRING,
+        allowNull: false
+    },
+    Month:{
         type:DT.STRING,
         allowNull: false
     },
