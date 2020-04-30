@@ -6,7 +6,7 @@ $(document).ready(function(){
     let BloodBankVal = document.getElementById("BloodBank")
     let month = document.getElementById('month')
     btn.onclick = function(){
-        let x = document.getElementById("closebb");
+        let x = document.getElementById("allbb");
         x.style.display = "block";
         let hID = document.getElementById("hospitalId")
         let password = document.getElementById("password")
@@ -240,7 +240,7 @@ $(document).ready(function(){
         function DisplayBg(){
             for(let i=0;i<BgGrp.length;i++)
             BgJsonObj[BgGrp[i]]=BgCount[i]
-            console.log("Age Count Here ",BgJsonObj)
+            console.log("Blood group Count Here ",BgJsonObj)
 
             if (myBloodGpChart) {
                 myBloodGpChart.destroy();
