@@ -21,7 +21,7 @@ p {
 
 /*Home page*/
 #home .jumbotron {
-	background-image: url(../images/about.jpg);
+	background-image: url(../images/about1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -43,6 +43,11 @@ p {
 @media all and (max-width: 500px){
 	#home .row {
 		margin: auto 1rem;
+	}
+
+	#home .jumbotron h1 {
+		font-size: 3rem;
+		font-weight: 500;
 	}
 }
 
