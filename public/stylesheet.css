@@ -18,6 +18,7 @@ p {
 	font-weight: 500;
 }
 
+
 /*Home page*/
 #home .jumbotron {
 	background-image: url(../images/about.jpg);
@@ -122,14 +123,6 @@ i {
 	color: #9b0000;
 }
 
-/*@media all and (min-width: 990px) and (max-width: 1125px){
-	#navbarchange .navbar-nav .nav-link {
-		font-size: 1.25rem;
-		padding-right: .5rem;
-		padding-left: .5rem;
-	}
-}*/
-
 
 /*Form Display*/
 #formstyling {
@@ -158,13 +151,15 @@ i {
 	}
 }
 
+label {
+	font-weight: 500;
+}
+
+/*CSV file label*/
 #padRigProb {
 	padding-right: 0;
 }
 
-label {
-	font-weight: 500;
-}
 
 /*Graphs Display*/
 #displayGraphs {
