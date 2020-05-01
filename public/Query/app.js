@@ -151,7 +151,7 @@ $(document).ready(function(){
                 data:{age:age.value,gender:gender.value,bloodGrp:bloodGrp.value,BloodCampId:resultsIDName[i].id},
                 success:function(result){
                     if(parseInt(result)>parseInt(answer)){
-                        index=i+1;
+                        index=resultsIDName[i].id;
                         answer=result;
                     }
                     count++;
