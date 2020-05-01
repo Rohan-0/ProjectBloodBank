@@ -17,6 +17,7 @@ $(document).ready(function(){
             success: function(result){
                 //Write a success message
                 console.log("successfully appended")
+                alert("Blood Bank successfully added.")
             }
         })
         return false;
