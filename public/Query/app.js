@@ -9,14 +9,14 @@ $(document).ready(function(){
         x.style.display = "block";
 
         let hID = document.getElementById("hospitalId")
-        let name = document.getElementById("name")
-        getResults(hID.value,name.value)
+        let password = document.getElementById("password")
+        getResults(hID.value,password.value)
         
-        function getResults(hID,name){
+        function getResults(hID,password){
             $.ajax({
                 url:`/getResult`,
                 method:'POST',
-                data:{hospitalId:hID,Name:name},
+                data:{hospitalId:hID,password:password},
                 success:function(result){
                     console.log(result)
                     console.log(result[0].zipCode)
