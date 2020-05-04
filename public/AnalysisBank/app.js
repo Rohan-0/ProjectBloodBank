@@ -195,7 +195,7 @@ $(document).ready(function(){
                 $.ajax({
                     url:'/countDonors',
                     method:"POST",
-                    data:{BloodCampId:resultsIDName[i].id,month:month.value, age:"Any",gender:"Any",bloodGrp:BgGrp[i],BloodDonNxt:predVal.value},
+                    data:{BloodCampId:resultsIDName[i].id,month:month.value, age:"Any",gender:"Any",bloodGrp:BgGrp[j],BloodDonNxt:predVal.value},
                     success:function(result){
                         BgCount[j] += parseInt(result)
                         count++;

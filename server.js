@@ -140,7 +140,7 @@ app.post('/countDonors',async(req,res)=>{
         {BloodDonNxt: pred},
         {Age : {
           [Op.gt]:minAge,
-          [Op.lt]:maxAge
+          [Op.lte]:maxAge
           }
         },
         {Gender:gender},
