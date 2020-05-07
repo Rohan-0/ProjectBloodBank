@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction</title>
+    <title>View CSV file</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>    
 </head>
 <body>
 
@@ -54,14 +54,14 @@
 
 
     <div class="text-left" id="formstyling">
-        <h1 align="center">Prediction</h1>
-        <p align="center">Login with your hospital ID and password, so that you can predict (age-wise, gender-wise etc.) the future donations of all blood banks.</p>
+        <h1 align="center">View Uploaded CSV</h1>
+        <p align="center">Login with your blood bank ID and password, to view the CSV file uploaded by your blood bank for any month along with the future blood donation predictions.</p>
         <br>
         <form>
             <div class="form-group row">
-                <label for="hospitalId" class="col-sm-4 col-md-3 col-form-label">ID : </label>
+                <label for="id" class="col-sm-4 col-md-3 col-form-label">ID : </label>
                 <div class="col-sm-8 col-md-9">
-                    <input type="text" class="form-control" id="hospitalId">
+                    <input type="text" class="form-control" id="id">
                 </div>
             </div>
             <div class="form-group row text-left">
@@ -77,84 +77,26 @@
             
             <div id="allbb" style="display: none;">
                 <hr>
-                <h3>All Blood Banks: </h3>
-                <ul id="listBank"> </ul>
-                <hr>
-
-                <h3>Prediction Steps :</h3>
-                <ul>
-                    <li>Select the blood bank (or Any for all blood banks)</li>
-                    <li>Select the month (or Any for all months)</li>
-                    <li>Click on different distribution to see prediction</li>
-                </ul>
-                <br>
-
                 <div class="form-row justify-content-center align-items-end">
                     <div class="form-group col-6 col-sm-5 col-md-4">
-                        <label for="BloodBank">Blood Bank</label>
-                        <select id="BloodBank" class="form-control"></select>
-                    </div>
-                    <div class="form-group col-6 col-sm-5 col-md-4">
                         <label for="month">Month</label>
-                        <select id="month" class="form-control">
-                            <option value="Any" selected>Any</option>
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                        </select>
-                    </div>
-                    <div style="display: none;" class="form-group col-6 col-md-5">
-                        <label for="Predict">Include Future Prediction</label>
-                        <select id="Predict" class="form-control">
-                            <option value="No">No</option>
-                            <option value="Yes" selected>Yes</option>
+                        <select id='month' class="form-control">
                         </select>
                     </div>
                 </div>                
             
                 <div class="text-center">
-                    <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
-                        <br>
-                        <button id="age" class="btn btn-info" type="button" >Click for Age wise distribution</button>
-                        <br>
-                        <button id="gender" class="btn btn-info" type="button">Click for Gender wise distribution</button>
-                        <br>
-                        <button id="BloodGrp" class="btn btn-info" type="button">Click for Blood Group wise distribution</button>
-                        <br>
-                    </div>
+                    <button id="CSVData" class="btn btn-primary" type="button">CSV File Data</button>
                 </div>
                 
             </div>
         </form>
     </div>
 
-    <div id="displayGraphs" class="container-fluid" align="center">
-        <div class="row justify-content-center">                    
-            <div id="displayAgeGraph" class="col-lg-6" style="display: none;">
-                <h4>Age wise distribution</h4>
-                <canvas id="ageBarGraph"></canvas>
-                <br>
-            </div>
-            <div id="displayGenderGraph" class="col-lg-6" style="display: none;">
-                <h4>Gender wise distribution</h4>
-                <canvas id="genderPieChart"></canvas>
-                <br>
-            </div>
-            <div id="displayBloodGpGraph" class="col-lg-6" style="display: none;">
-                <h4>Blood group wise distribution</h4>
-                <canvas id="bloodGrpBarGraph"></canvas>
-                <br>
-            </div>
-        </div>
+    <div class="container-fluid text-center">
+        <div class="table-responsive table-sm">
+            <div id="ForTable"></div>
+        </div>      
     </div>
 
 </body>

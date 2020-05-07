@@ -87,6 +87,18 @@ app.get('/Analysis/getall',async(req,res)=>{
   var result = await bloodCamp.findAll()
   res.send(result)
 })
+app.post('/getAll',async(req,res)=>{
+  var result = await bloodCamp.findAll({
+    attributes: ['Name','Area','zipCode']
+  })
+  res.send(result)
+})
+app.post('/getAllHospital',async(req,res)=>{
+  var result = await hospital.findAll({
+    attributes: ['Name','Area','zipCode','Contact']
+  })
+  res.send(result)
+})
 app.post('/getResult',async (req,res)=>{
   // console.log(req.body.hospitalId)
   var result =  await hospital.findAll({
@@ -102,6 +114,18 @@ app.post('/getResult',async (req,res)=>{
     if(result == 0)
       res.sendStatus(400)
      res.send(result)
+})
+app.post('/getDonors',async(req,res)=>{
+  var result = await bloodDonor.findAll({
+    attributes:['Donor_id','Gender','BloodGrp','Age','MonthsLastDon','TotDon','VolDon','MonthsFirstDon','BloodDonNxt'],
+    where:{
+      [Op.and]:{
+        BloodCampId:req.body.CampId,
+        Month:req.body.month
+      }
+    }
+  })
+  res.send(result)
 })
 app.post('/countDonors',async(req,res)=>{
   let gender, minAge, maxAge, bloodGrp,pred=true,month=['January','February','March','May','April','June','July','August','September','October','November','December'];
