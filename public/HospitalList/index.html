@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Show All Hospitals</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -12,8 +13,7 @@
 </head>
 <body>
 
-  <div id="home">
-    <nav class="navbar navbar-expand-lg navbar-dark rounded-lg" id="navbarchange">
+	<nav class="navbar navbar-expand-lg navbar-dark rounded-lg" id="navbarchange">
         <a class="navbar-brand" href="#">RedFL<i class="fas fa-tint"></i>W</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -53,50 +53,12 @@
         </div>
     </nav>
 
-    <div class="jumbotron text-center text-white">
-      <h1>Live & Give Life: Predict Blood Donations</h1>
-        <p class="text-monospace">We, at RedFLOW aim to connect hospitals with their nearby blood banks so that hospitals would never run out of their blood reserves. Moreover, registered hospitals can quantitatively and qualitatively analyse the stored data (of blood donors) of all blood banks without any breach of blood-donor's personal information and also predict future donations with the help of same.</p>
+	<h1 align="center">List of Hospitals</h1>
+    <div class="container-fluid text-center">
+        <div class="table-responsive table-sm"> 
+            <div id="ForTable"></div>          
+        </div>      
     </div>
-
-
-    <h1 class="text-center text-monospace" style="font-weight: 700; font-size: 4rem;">Our Goal</h1>
-    <br>
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6">
-          <div class="card">
-            <img src="../images/1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <!-- <h4 class="card-title text-center">Saving lives</h4> -->
-              <p class="card-text">Increase the effectiveness and efficiency of blood donations.</p>
-            </div>
-          </div> 
-          <br>     
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card">
-            <img src="../images/2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <!-- <h4 class="card-title text-center">Spreading Smiles</h4> -->
-              <p class="card-text">Analyse patterns in blood donations and make important predictions about future blood donations.</p>
-            </div>
-          </div> 
-          <br>     
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card">
-            <img src="../images/3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <!-- <h4 class="card-title text-center">Enriching Mankind</h4> -->
-              <p class="card-text">Connect blood banks with hospitals.</p>
-            </div>
-          </div>
-          <br>      
-        </div>
-      </div>
-    </div>
-
-  </div>
 
 </body>
 </html>

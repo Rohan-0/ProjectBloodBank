@@ -89,13 +89,13 @@ app.get('/Analysis/getall',async(req,res)=>{
 })
 app.post('/getAll',async(req,res)=>{
   var result = await bloodCamp.findAll({
-    attributes: ['Name','Area','zipCode']
+    attributes: ['Name','BloodCampId','Area','zipCode']
   })
   res.send(result)
 })
 app.post('/getAllHospital',async(req,res)=>{
   var result = await hospital.findAll({
-    attributes: ['Name','Area','zipCode','Contact']
+    attributes: ['Name','hospitalId','Area','zipCode','Contact']
   })
   res.send(result)
 })
