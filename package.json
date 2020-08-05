@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.6",
+    "express-fileupload": "^1.1.9",
     "http": "0.0.1-security",
     "jquery-csv": "^1.0.11",
     "sequelize": "^5.21.5",
