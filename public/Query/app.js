@@ -51,7 +51,11 @@ $(document).ready(function(){
             }
             function getDist(zipH,zipB,BloodBankName,BloodBankId){
                 $.ajax({
+<<<<<<< HEAD
                     url:`https://alloworigin.com/get?url=http://www.zipcodeapi.com/rest/HtCqfRiusxpErSXWvn5NIAo3VGXTO5mpbeemzzHFZn6my2CU42LJb5ZZmQKLF61W/distance.json/${zipH}/${zipB}/<units>`,
+=======
+                    url:`http://www.zipcodeapi.com/rest/p3O5DU86sikB3DqAj2RvBQnxVTp24m1515IWKOA2epHtgkAzW70KEZc2i3UupbvQ/distance.json/${zipH}/${zipB}/`,
+>>>>>>> d7b766a706812d64ae3ac345bdeffbb28ab4e1c4
                     success:function(result){
                         count++;
                         distBloodBank.push({
